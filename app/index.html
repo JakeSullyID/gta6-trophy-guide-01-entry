@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leonida Trophy Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-main">
+      <h1 class="app-title">LEONIDA TROPHY GUIDE</h1>
+      <p class="app-subtitle">55 trophies: 1 platinum, 2 gold, 6 silver, 46 bronze, 0 online — all offline single-player</p>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar-wrap">
+        <div id="progress-bar" class="progress-bar-fill" style="width: 0%;"></div>
+      </div>
+      <div class="progress-stats">
+        <span id="progress-text">0 of 55 earned (0%)</span>
+        <div class="mini-counts" id="mini-counts">
+          <span class="mini-badge">story: <strong id="count-story">0</strong>/<span id="total-story">12</span></span>
+          <span class="mini-badge">missable: <strong id="count-missable">0</strong>/<span id="total-missable">1</span></span>
+          <span class="mini-badge">collectibles: <strong id="count-collectibles">0</strong>/<span id="total-collectibles">5</span></span>
+          <span class="mini-badge">activities: <strong id="count-activities">0</strong>/<span id="total-activities">36</span></span>
+        </div>
+      </div>
+    </div>
+    <nav class="tab-nav">
+      <button id="tab-checklist" class="tab-btn active" data-tab="checklist">Checklist</button>
+      <button id="tab-roadmap" class="tab-btn" data-tab="roadmap">Roadmap</button>
+      <button id="tab-missables" class="tab-btn" data-tab="missables">Missables</button>
+      <button id="tab-sources" class="tab-btn" data-tab="sources">Sources</button>
+    </nav>
+  </header>
+
+  <main class="app-main">
+    <!-- Checklist Tab Section -->
+    <section id="section-checklist" class="tab-section active">
+      <div class="toolbar">
+        <div class="toolbar-group search-group">
+          <input type="text" id="search" placeholder="Search trophies…" autocomplete="off">
+        </div>
+        <div class="toolbar-group filter-group">
+          <select id="kind-filter">
+            <option value="all">All Kinds</option>
+            <option value="story">Story</option>
+            <option value="missable">Missable</option>
+            <option value="collectible">Collectible</option>
+            <option value="activity">Activity</option>
+            <option value="platinum">Platinum</option>
+            <option value="online">Online</option>
+          </select>
+          <select id="grade-filter">
+            <option value="all">All Grades</option>
+            <option value="platinum">Platinum</option>
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="bronze">Bronze</option>
+          </select>
+          <label class="checkbox-label">
+            <input type="checkbox" id="earned-only"> Earned only
+          </label>
+        </div>
+        <div class="toolbar-group action-group">
+          <button id="spoiler-toggle" class="btn">Spoiler shield: off</button>
+          <button id="export-btn" class="btn">Export</button>
+          <label class="btn file-label" for="import-input">
+            Import
+            <input type="file" id="import-input" accept="application/json" style="display: none;">
+          </label>
+        </div>
+      </div>
+
+      <div class="content-split">
+        <div class="list-container">
+          <ul id="trophy-list" class="trophy-list"></ul>
+        </div>
+        <aside id="detail-pane" class="detail-pane">
+          <div class="detail-placeholder">Select a trophy from the list to view its guide and details.</div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Roadmap Tab Section -->
+    <section id="section-roadmap" class="tab-section" style="display: none;">
+      <div id="roadmap-container" class="roadmap-container"></div>
+    </section>
+
+    <!-- Missables Tab Section -->
+    <section id="section-missables" class="tab-section" style="display: none;">
+      <div id="missables-container" class="missables-container"></div>
+    </section>
+
+    <!-- Sources Tab Section -->
+    <section id="section-sources" class="tab-section" style="display: none;">
+      <div id="sources-container" class="sources-container"></div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Leonida Trophy Guide &bull; Built for completionists</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+  <script type="module" src="shots.js"></script>
+</body>
+</html>
